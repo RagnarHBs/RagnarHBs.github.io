@@ -1,0 +1,425 @@
+<!--Document Declaration.........................................-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+	<!--**..HEAD..*****************************************************-->
+
+	<head>
+
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	
+		<META http-equiv="Pragma" content="no-cache">
+
+		<META name = "Description" content = "Home web site of miscellaneous things including hobbies, interests, reviews, links, pets" >
+
+		<META name = "keywords" content = "frederickson, live date, scrolling text, marquee, Ratbag, D'evil, Mortimer, Waldorf, Pinky Brain, hamsters, electronics, story, reviews, links, html, java script" >
+
+		<META name="rating" content="General">
+		<META name="ROBOTS" content="ALL"> 
+
+		<title>
+			FREDERICKSON.CO.UK
+		</title>
+
+		<link rel="SHORTCUT ICON" href="/favicon.ico"/>
+		
+	</head>
+
+	<!--..Body........................................-->
+
+   	<body
+		 style = "color: rgb(0, 0, 255); background-color: rgb(204, 255, 255);filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0');"
+		 alink="#000099"	
+		 link="#000099"
+		 vlink="#990099"
+		>
+
+		<!--**..Home Links..****************************************************-->
+
+		<!--..Top of Page Anchor-->
+		<A NAME = "Top_Of_Page">
+		</A>
+
+		<!--**..Banner..****************************************************-->
+
+		<div style="text-align: center;">
+			<img
+				style="width: 547px; height: 62px;"
+				alt="FREDERICKSON.CO.UK"
+				src="Main_Images/Banner.gif"
+				>
+		</div>
+
+		<!--**..Live Date & Time..****************************************************-->
+
+		<!-- Define Element for display of time and Date -->
+		<P STYLE = "TEXT-ALIGN: CENTER; " >
+			<span id="clock">
+				Live Date &amp; Time
+			</span>
+		<P>
+
+		<script>
+			/*
+			Java Script for generating current time and date
+			Written by Clive Frederickson, using online java script tutorials and other web page scripts
+			References:
+			1- Live Date Script-  © Dynamic Drive (www.dynamicdrive.com)
+			2- Circular Clock - Mouse following, I sourced from Asoka Liyanage., but the code originator is not known - but pretty good
+			3- Count down until any date script- By JavaScript Kit (www.javascriptkit.com)
+			4- http://www.web-source.net/
+			*/
+			var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+			var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+
+			function Datetoday()
+			{
+				var today=new Date()			// Fetch the current date and time
+				var todayd=today.getDay()		// Get the day of the week, 0=Sunday, 1 = Monday etc
+				var todayn=today.getDate()		// Get the day of the month, 1 to 31 etc
+				var todaym=today.getMonth()		// Get the Month 1 to 12
+				var todayy=today.getYear()		// Get the year
+
+				if (todayy < 1000)				// If year less than 1000 (i.e. less than four decimal digits?)
+					todayy+=1900				// Add base offset of 1900
+					
+				var todayh=today.getHours()		// Get current Hours
+				var todaymin=today.getMinutes()	// Get current minutes
+				var todaysec=today.getSeconds()	// get current seconds
+			
+				// Enforce hours as double digits
+				if (todayh <= 9)
+					todayh = "0" + todayh
+			
+				// Enforce minutes as double digits
+				if (todaymin <= 9)
+					todaymin = "0" + todaymin
+			
+				// Enforce seconds as double digits
+				if (todaysec <= 9)
+					todaysec = "0" + todaysec
+				
+				// Construct the time stamp sting for display
+				var tymestring = todayh + ":" + todaymin + ":" + todaysec // Format time string
+			
+				// Contruct Date string
+				var datestring = todayn + "th" 		// Defualt suffix
+				var todayna = todayn				// Copy todays date number
+			
+				if (todayn >= 31 && todayn <= 33)
+					todayna = todayn - 30			// If between 31 and 33 convert to 1, 2 or 3
+			
+				if (todayn >= 21 && todayn <= 23)
+					todayna = todayn - 20			// If between 21 and 23 convert to 1, 2 or 3
+			
+				if (todayna == 1)
+					datestring = todayn + "st"	// If it ends in 1 then suffix is st
+			
+				if (todayna == 2)
+					datestring = todayn + "nd"	// If it ends in 2 then suffix is nd
+
+				if (todayna == 3)
+					datestring = todayn + "rd"		// If it ends in 3 then suffix is rd
+			
+				// Create string to display on web page
+				var todaystring = dayarray[todayd] + " " + datestring + " "	+ montharray[todaym] + " " +todayy + ", " + tymestring	
+			
+				//  Write the time to a defined area of the html page by referencing an element area
+				document.getElementById("clock").innerHTML=todaystring
+			
+				// Set time interval
+				setTimeout("Datetoday()",1000)
+			}
+	 
+			Datetoday()
+		
+		</script>
+
+		<!--**..Scrolling Marquee..****************************************************-->
+		<p>
+		<MARQUEE 
+			bgcolor="#33FFFF"
+			loop="-1"
+			scrollamount="3"
+			width="100%"
+			>
+			** 05-03-2010 Added A to Z index to Web links page
+			
+		</MARQUEE>
+
+		<!--**..Introduction text..****************************************************-->
+
+		<H1
+			STYLE="TEXT-ALIGN: CENTER;"
+			>
+			Welcome to our web site
+			<BR>
+			It's a miscellaneous collection of reviews, hobbies, pets, links and silly things.
+			<BR>
+			<BR>
+			It is continuously evolving and growing, please come back again
+		</H1>
+
+		<P>
+		<HR SIZE = "4" NOSHADE>
+		<P>
+
+		<!--..Contents Table.............................................................................-->
+		<table
+			style = "text-align: center; width: 100%;"
+			border="1"
+			cellpadding="2"
+			cellspacing="2"
+			>
+
+			<!--.. Ratbag-->
+			<tr>
+				<td>
+					<a
+						href="Ratbag/Ratbag.html"
+						>
+						<img
+							style="width: 100px; height: 100px;"
+							alt="Ratbag's"
+							src="Main_Images/Ratbag 01.jpg"
+						>
+					</a>
+				</td>
+
+				<td>
+					<a
+						href="Ratbag/Ratbag.html"
+						>
+						Ratbag
+					</a>
+				</td>
+
+				<td>
+					Review Pages, lists websites, services, 
+					products that we have has either good or bad experiences with;
+				</td>
+			</tr>
+
+			<!--..Devil-->
+			<tr>
+				<td>
+					<a
+						href="Devil/Devil.html"
+						>
+						<img
+							style="width: 100px; height: 100px;" 
+							alt="D'evils"
+							src="Main_Images/Devil 01.jpg"
+							>
+					</a>
+				</td>
+				
+				<TD>
+					<a
+						href="Devil/Devil.html"
+						>
+						D'evil
+					</a>
+				</td>
+
+				<td>
+					Web links - both to other sites we like and to others that have helped
+					with the construction of this web site
+				</td>
+			</tr>
+
+			<!--..Mortimer-->
+			<tr>
+				<td>
+					<a href="Mortimer/Mortimer.html" >
+						<img
+							style="width: 100px; height: 100px;"
+							alt="Mortimer's"
+							src="Main_Images/Mortimer 01.jpg"
+							>
+					</a>
+				</td>
+	
+				<TD>
+					<a href="Mortimer/Mortimer.html">
+						Mortimer
+					</a>
+				</td>
+
+				<td>
+					Web pages consisting of Electronics, Own Story, Hobbies and other miscellaneous stuff
+				</td>
+			</tr>
+
+			<!--..Waldorf-->
+			<tr>
+				<td>
+					<a href = "Waldorf/Waldorf.html">
+						<img
+						style="width: 100px; height: 100px;"
+						alt="Waldorf's Pages"
+						src="Main_Images//Snowflakes.gif"
+						>
+					</a>
+				</td>
+
+				<td>
+					<a href="Waldorf/Waldorf.html">
+						Waldorf
+					</a>
+				</td>
+
+				<td>
+					Waldorf's Web Pages
+				</td>
+			</tr>
+
+			<!--..Pinky and the Brain-->
+			<tr>
+				<td>
+					<a href="Pinky_Brain/pinky_brain.html">
+						<img 
+							style="width: 100px; height: 100px;"
+							alt="Pinky and the Brain Pages"
+							src="Main_Images/Snowflakes.gif"
+							align="middle"
+							>
+					</a>
+				</td>
+
+				<td>
+					<a href="Pinky_Brain/pinky_brain.html">
+						Pinky and the Brain
+					</a>
+				</td>
+
+				<td>
+					All about our hamsters
+				</td>
+
+			</tr>
+
+			<!--..Contact-->
+			<tr>
+				<td>
+					<a href="contact.html">
+						<img 
+							style="width: 100px; height: 100px;"
+							alt="Image_my mail"
+							src="Main_Images/my_mail.gif"
+							align="middle"
+							>
+					</a>
+				</td>
+
+				<td>
+					<a href="contact.html">
+						Contact us
+					</a>
+				</td>
+
+				<td>
+					For feed back, drop us a line here
+				</td>
+
+			</tr>			
+			
+		<!--..End of table-->
+		</table>
+
+		<!--..Top Of Page Link..************************************-->
+		<P>
+		<HR SIZE = "4" NOSHADE>
+		<BR>
+		<A 
+			HREF = "#Top_Of_Page"
+			onmouseover = "window.status = 'Back to the top of the page'; return true"
+			onmouseout = "window.status = '' ; return true"
+			>
+			To the top of the page
+		</A>
+
+		<!--**..Sponcer Links..***************************************************-->
+		<P>
+		<HR SIZE = "4" NOSHADE>
+
+		<!--..Gigablast-->
+		<A 
+			HREF = "www.gigablast.com"
+			onmouseover = "window.status = 'GIGABLAST - Internet search engine'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+			<IMG 
+				STYLE="width: 105px; height: 42px;"
+				HSPACE = 20
+				SRC = "Main_Images/Gigablast.gif" 
+				ALT = "www.gigablast.com"
+				>
+		</A>
+
+		<!--..Yahoo-->
+		<A 
+			HREF = "www.yahoo.com"
+			onmouseover = "window.status = 'Yahoo - Internet search engine'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+			<IMG 
+				STYLE="width: 105px; height: 42px;"
+				HSPACE = 20
+				SRC = "Main_Images/yahoo-logo.gif" 
+				ALT = "Yahoo.com"
+				>
+		</A>
+
+		<!--..Web-source.net-->
+		<A 
+			HREF = "www.web-source.net"
+			onmouseover = "window.status = 'Web-source.net - Web, HTML, Java, CSS for hints, tips and examples'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+			<IMG
+				STYLE="width: 105px; height: 42px;"
+				HSPACE = 20
+				SRC = "Main_Images/wslogo.gif"
+				ALT = "Web-Source.net"
+				>
+		</A>
+
+		<!--..Google-->
+		<A 
+			HREF = "www.google.com"
+			onmouseover = "window.status = 'Google.com - Internet search engine'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+			<IMG 
+				STYLE="width: 105px; height: 42px;"
+				HSPACE = 20
+				SRC = "Main_Images/google-logo.gif" 
+				ALT = "Google.com"
+				>
+		</A>
+
+		<!--..AI Internet Solutions-->
+		<A 
+			HREF = "www.htmlvalidator.com"
+			onmouseover = "window.status = 'AI Internet Solutions - HTML code validator software'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+			<IMG 
+				STYLE="width: 105px; height: 42px;"
+				HSPACE = 20
+				SRC = "Main_Images/AI-logo.gif" 
+				ALT = "www.htmlvalidator.com"
+				>
+		</A>
+
+		<!--**..END..***************************************************-->
+		<HR SIZE = "4" NOSHADE>
+		<P>
+		(Updated: 3rd March 2010)
+
+	</BODY>
+	
+</HTML>
