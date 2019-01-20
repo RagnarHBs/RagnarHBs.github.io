@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<!**..TITLE..*****************************************************>
+
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>
+Step Down (Buck) Converter
+</title>
+</head>
+
+<!**..Body..*****************************************************>
+
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" alink="#000099" link="#000099" vlink="#990099">
+
+<!**..Home Links*****************************************************>
+
+<!..Top of Page Anchor..>
+<A NAME = "Top_Of_Page">
+</A>
+
+<!..Home Page Link..>
+<A HREF = "../../home.html">
+<IMG SRC = "home.jpg" ALT = "Home Page">
+</A>
+
+<!..Sub Section Main Page Link..>
+<A HREF = "../Mortimer.html">
+<IMG SRC = "Mortimer.jpg" ALT = "Mortimers Page">
+</A>
+
+<HR>
+
+<!**..Heading..*****************************************************>
+
+<H2 style="TEXT-ALIGN: LEFT;">
+Step Down (BUCK) Converter
+</H2>
+
+<!**..Scehmatic Diagram..*****************************************************>
+
+<P ALIGN=CENTER>
+<img src="Stepdown_files/Schematic01.gif" ALT="Schematic Diagram">
+<BR>
+<A name="Figure_1"> Figure 1 - Schematic</A>
+</P>
+
+<HR>
+<BR>
+<!**..Electronics Guide..*****************************************************>
+
+<H2 style="TEXT-ALIGN: LEFT;">
+Target Parameters
+</H2>
+
+<PRE>
+<UL>
+<LI>Input voltage		= 12V DC
+<LI>Output voltage		= 6V DC
+<LI>Output Current		= 1.5A
+<LI>Output Voltage ripple	= 40 mV pk/pk
+<LI>Switching Frequency	= 20 kHz
+</UL>
+</PRE>
+
+<HR>
+<BR>
+<!**..Calculations..*****************************************************>
+
+<H2 style="TEXT-ALIGN: LEFT;">
+Calculations
+</H2>
+
+<!..Time Period..>
+<P>
+<H3>
+1) Time Period
+</H3>
+
+<img src="Stepdown_files/Time_Equ01.gif" ALT = "Time Period Formula">
+
+<BR><BR>
+Where T = ime Period, f = switching frequency
+
+<BR><BR>
+<img src="Stepdown_files/Time_Equ02.gif" ALT = "Time Period Calculation">
+</P>
+
+<!..ON Time..>
+<P>
+<BR><BR>
+<H3>
+2) On Time
+</H3>
+
+The time period where the MOSFET is switched on for.
+
+<BR><BR>
+<img src="Stepdown_files/Ontime_Equ01.gif" ALT = "On Time Formula">
+
+<BR><BR>
+Where t1 = Q1 on time, T is time period, Vo is output voltage, Vin is input voltage
+
+
+<BR><BR>
+<img src="Stepdown_files/Ontime_Equ02.gif" ALT="On Time Calculation">
+</P>
+
+<!..Inductor Ripple Current..>
+<P>
+<BR><BR>
+<H3>
+3) Inductor Ripple Current
+</H3>
+
+Aim to limit the inductor ripple current to 50% of the load current
+
+<BR><BR>
+<img src="Stepdown_files/Inductor_I01.gif" ALT = "Inductor Ripple Curent Forumla">
+
+<BR><BR>
+Where <span style="font-family: Symbol;">D</span>I<sub>L</sub> is Inductor ripple current, I<sub>O</sub> is output current
+
+<BR><BR>
+<img src="Stepdown_files/Inductor_I02.gif" ALT = "Inductor Ripple Current Calculation">
+</P>
+
+<!..Inductance..>
+<P>
+<BR><BR>
+<H3>
+4) Inductance
+</H3>
+
+<BR><BR>
+<img src="Stepdown_files/Inductance_01.gif" ALT = "Inductance Formula">
+
+<BR><BR>
+Where L = inductance, t1 = Q1 on time, Vin = input voltage, Vo = output voltage, <span style="font-family: Symbol;">D</span>I<sub>L</sub> is Inductor ripple current
+
+<BR><BR>
+<img src="Stepdown_files/Inductance_02.gif" ALT = "Inductance Calculation">
+</P>
+
+<!..Output Capacitance..>
+<P>
+<BR><BR>
+<H3>
+5) Output Capacitance
+</H3>
+
+<BR><BR>
+<img src="Stepdown_files/Capacitance_01.gif" ALT = "Capacitance Formula">
+
+<BR><BR>
+Where C = capacitance, T = time period, L = inductance, <span style="font-family: Symbol;">D</span>V = voltage
+ripple, Vo = output voltage, Vin = input voltage
+
+<BR><BR>
+<img src="Stepdown_files/Capacitance_02.gif" ALT = "Capacitance Calculation">
+
+<BR><BR>
+Rounding C to a preferred value gives 120uF
+</P>
+
+<HR>
+<BR>
+<!**..Simulations..*****************************************************>
+
+<H2 style="TEXT-ALIGN: LEFT;">
+Simulations
+</H2>
+
+Using the free version of Simetrix, the circuit in <A HREF="#Figure_1">Figure 1 </A>
+the basic circuit was simulated.
+
+<BR><BR>
+<H3>
+Parameters:
+</H3>
+
+<UL>
+<LI>V1 = voltage source to provide the input voltage
+<LI>V2 = Pulse source giving a 20kHz square wave, 12v peak to peak, initial vale set to 12v, 50% duty cycle
+<LI>Q1 = Any suitable P-channel MOSFET should suffice, I used an RFD15P05
+<LI>D1 = For best results, uses a ultra fast recovery diode, I used an MUR850
+<LI>RL = Load resistor to give full load current
+</UL>
+
+<BR><BR>
+<H3>
+Load Resistance:
+</H3>
+
+<img src="Stepdown_files/Resistance_01.gif" ALT = "Load Resistance Calculation">
+
+<HR>
+<BR>
+<!..Top Of Page Link..*************************************>
+<A HREF = "#Top_Of_Page">
+Top Of Page
+</A>
+
+<!**..END..****************************************************>
+<P>
+{Updated: 20th June 2008
+
+</BODY>
+</HTML>

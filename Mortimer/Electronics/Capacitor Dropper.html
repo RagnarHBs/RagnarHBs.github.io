@@ -1,0 +1,1109 @@
+<!--Document Declaration.........................................-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+	<!--..TITLE.........................................-->
+
+	<HEAD>
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	
+		<META http-equiv="Pragma" content="no-cache">
+
+		<META name = "Description" content = "Motimer's pages of Web stuff, Electronics, Hobbies, and other stuff" >
+
+		<META 
+			name = "keywords"
+			content = "frederickson, live date, scrolling text, marquee, Ratbag, D'evil, Mortimer, Waldorf,
+						Pinky Brain, hamsters, electronics, story, reviews, links, html, java script,
+						TAG's, funky clock, html clock, electronics guide, resistor dropper, power supplies, light,
+						international mains voltages, electronic, electronics projects, smartpot, smart pot, spectrol,
+						electronics books, book, other books, a touch of wind, story, stories, wanted, compost, compost watch,
+						compost bin, compost photo, phot, photos, cap dropper, capacitor dropper, capacitive dropper,
+						cap power supply
+						" >
+
+		<META name="rating" content="General">
+		<META name="ROBOTS" content="ALL"> 
+
+		<title>
+			Capacitor Dropper Power Supply
+		</title>
+
+	</HEAD>
+
+	<!--..Body........................................-->
+   	<body
+		 style = "color: rgb(70, 70, 70); background-color: rgb(240, 240, 240);filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#CCCCCC', startColorstr='#FFFFFF', gradientType='0');"
+		 alink="#000099"	
+		 link="#000099"
+		 vlink="#990099"
+		>
+	
+		<!--..Home Links.......................................-->
+
+		
+		<A NAME = "Top_Of_Page"> <!--Top of Page Anchor-->
+		</A>
+
+		<!--Home Page Link-->
+		<A
+			HREF = "../../home.html"
+			onmouseover = "window.status = 'Back to home page'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+	
+			<IMG 
+				style = "width: 100px; height: 20px;"
+				BORDER = "0"
+				SRC = "../../Main_Images/home.gif"
+				ALT = "Home Page"
+				>
+		</A>
+		
+		<!--Power Supplies Page Link-->
+		<A
+			HREF = "psu_main.html"
+			onmouseover = "window.status = 'Back to PSU main page'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+	
+			<IMG 
+				style = "width: 100px; height: 30px;"
+				BORDER = "0"
+				SRC = "../../Main_Images/psu.gif"
+				ALT = "PSU main Page"
+				>
+		</A>
+
+		<!--Mortimer's Page Picture-->
+		<div style="text-align: center;">
+			<A
+				HREF = "../Mortimer.html"
+				onmouseover = "window.status = 'Back to Mortimer's page'; return true"
+				onmouseout = "window.status = ''; return true"
+				>
+		
+				<IMG 
+					style = "width: 50px; height: 50px;"
+					BORDER = "0"
+					SRC = "../../Main_Images/Mortimer 02.jpg"
+					ALT = "Mortimer's Page"
+					>
+			</A>
+		</div>
+		
+		<!--..Heading................................................-->
+
+		<div style="text-align: center;">
+
+			<H1>
+				Capacitor Dropper Power Supply
+			</H1>
+		</div>
+
+		<!--..Introduction.............................................-->
+		<HR>
+		<BR>
+
+		<H2 style="TEXT-ALIGN: LEFT;">
+			Introduction
+		</H2>
+
+		Capacitor dropper power supplies have the advantage of dropping the AC supply (Mains AC) voltages down to low
+		voltages whilst dissipating very little heat. This is achieved by utilizing the AC resistance (Reactance)
+		of the capacitor. The power supply can be relatively low cost and be capable of up to 350 mW [TBD]
+		There are down sides however. They are susceptible to high frequency noise &amp; transients, can be physically
+		large compared to a resistor dropper or Switch mode power supply.
+		
+		Here we discuss three variants of the Capacitor Dropper Design
+				
+		<OL>
+			<li> <a href="#variant_1"> Basic half wave rectifier and single smoothing capacitor </A>
+			<li> <a href="#variant_2"> Basic half wave rectifier and two stage smoothing </A>
+			<li> <a href="#variant_3"> Full wave rectifier and two stage smoothing </A>
+		</OL>
+
+		<!--..Variant 1..***************************************************-->
+		<HR>
+		<BR>
+
+		<!-- Heading-->
+		<a name = "variant_1" >
+		
+			<H2 style="TEXT-ALIGN: LEFT;">
+				Variant 1 - Basic Half wave rectifier and single smoothing capacitor
+			</H2>
+		</a>
+		
+		<!-- Schematic 1-->
+		<P
+			align = center
+			>
+			
+			<IMG 
+				BORDER = "0"
+				SRC = "Cap_dropper/variant1_schematic1.gif"
+				ALT = "Variant 1 Schematic without values"
+				>
+		
+			<h3 style="text-align: center;">
+				Figure 1 - Basic Capacitor dropper Schematic
+			</h3>
+		</p>
+		
+		<!-- Schematic key -->
+		<p>
+		<b> Where; </b>
+		<br>
+		V1 = AC voltage source
+		<br>
+		R1 = Peak current limiting resistor
+		<br>
+		C1 = Dropper capacitor
+		<br>
+		D2 = Half wave rectifier diode
+		<br>
+		D3 = Capacitor discharge diode
+		<br>
+		C2 = DC smoothing capacitor
+		<br>
+		D1 = DC voltage limiting zener diode
+		<br>
+		R2 = Resistive load (for simulation purposes)
+		
+		<!-- Intial design parameters-->
+		<H2 style="TEXT-ALIGN: LEFT;">
+			<br>
+			Initial Design Parameters
+		</H2>
+
+		<P>
+		To start our capacitor dropper design, we need some initial parameters;
+		<br>
+		<br>
+		
+		<!-- Parameters  description table-->
+		<table>
+			<tr>
+				<td>
+					Power Supply
+				</td>
+				<td>
+					= Mains supply
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Max peak input current
+				</td>
+				<td>
+					= this will be iterative, so start with an initial guess
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Output voltage
+				</td>
+				<td>
+					= the nominal output voltage rail
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Output current
+				</td>
+				<td>
+					= this should be the full load continuous current
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Output ripple
+				</td>
+				<td>
+					= Specify the maximum voltage ripple acceptable on the nominal output
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Charge time
+				</td>
+				<td>
+					= this specifies the time during the mains cycle that provides charge to the power supply.
+					Start with an estimate that can be refined if need be during simulations &amp; testing.
+				</td>
+			</tr>
+		</table>
+
+		<br>
+		<br>
+		<b> Our Starting values are; </b>
+		<p>
+		<table>
+			<tr>
+				<td>
+					<b>Input:</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Vin:
+				</td>
+				<td>
+					= 240 V 
+					<sub>
+						<font size = "1">
+							RMS,
+						</font>
+					</sub>
+				</td>
+				<td>
+					Mains Input voltage
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Fin:
+				</td>
+				<td>
+					= 50 Hz,
+				</td>
+				<td>
+					Mains input frequency
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Iin
+					<sub>
+						<font size = "1">
+							PEAK
+						</font>
+					</sub>
+				</td>
+				<td>
+					= 30 Amps,
+				</td>
+				<td>
+					Rectifier diodes non-repetitive peak current (from data sheet)
+					(Based on using the 1N4007 rectifier diode)	
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					.
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<b> Output: </b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Vout:
+				</td>
+				<td>
+					= 5 Volts,
+				</td>
+				<td>
+					Output DC voltage
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Iout:
+				</td>
+				<td>
+					= 20 mA,
+				</td>
+				<td>
+					Output DC current
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Vripple:
+				</td>
+				<td>
+					= 500 mV,
+				</td>
+				<td>
+					Maximum ripple voltage on output rail
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					.
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<b> Other Parameters: </b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Charge Time:
+				</td>
+				<td>
+					= 8 ms,
+				</td>
+				<td>
+					Approximate time when the mains is charging the smoothing Capacitor.
+				</td>
+			</tr>
+		</table>
+
+		<p>
+		
+		<!-- Calculations ********************* -->
+		<H2 style="TEXT-ALIGN: LEFT;">
+			<br>
+			Calculations
+		</H2>
+	
+		<!-- ********************* -->
+	
+		<h3>
+			<br>
+			1) Input (Supply) current
+		</h3>
+		
+		<p>
+			With half wave rectification we are only charging our power supply 50% of the mains cycle, 
+			the DC output will be loading the power supply 100% of the time (worst case). 
+			Therefore the current draw from the mains during the charge ½ cycle will have to be at least twice 
+			the output power.
+		</p>
+		
+		<p>
+			<b>a)</b>
+			The first step is to calculate our half wave peak current using our DC output current.
+			This is done by multiplying the DC current by 0.344
+		</p>
+		
+		<!-- Halfwave graph-->
+		<P
+			align = center
+			>
+			
+			<IMG 
+				BORDER = "0"
+				SRC = "Cap_dropper/halfwave graph1.gif"
+				ALT = "Half wave rectified graph"
+				>
+		
+			<h3 style="text-align: center;">
+				Figure 2 - Half wave rectified waveform
+			</h3>
+		</p>
+		
+		<!-- Iin peak calculation-->
+		<table>
+			<tr>
+				<td>
+					Iout:
+				</td>
+				<td>
+					= 20mA
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Iin
+					<sub>
+						<font size = "1">
+							PEAK
+						</font>
+					</sub>
+				</td>
+				<td>
+					= 20 mA / 0.344
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<b>= 58.1 mA</b>
+				</td>
+			</tr>
+		</table>
+		
+		<p>
+			<b>b)</b>
+			Next, calculate the Iin
+			<sub>
+				<font size = "1">
+					RMS
+				</font>
+			</sub>
+			value.
+			<br>
+			As the AC current is full wave (half wave through D2 and the other half through D3) 
+			multiply the Iin
+			<sub>
+				<font size = "1">
+					PEAK
+				</font>
+			</sub>
+			by the root of 2 (or 0.7071)
+		</p>
+		
+		<!-- In RMS calculation-->
+		<table>
+			<tr>
+				<td>
+					Iin
+					<sub>
+						<font size = "1">
+							PEAK
+						</font>
+					</sub>
+					:
+				</td>
+				<td>
+					= 58.1 mA
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Iin
+					<sub>
+						<font size = "1">
+							RMS
+						</font>
+					</sub>
+					:
+				</td>
+				<td>
+					= 58.1 mA * 0.7071
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<b>= 41.1 mA</b>
+				</td>
+			</tr>
+		</table>
+		
+		<!-- ********************* -->
+		
+		<h3>
+			<br>
+			2) Dropper Capacitor's Reactance
+		</h3>
+		
+		<p>
+			Next we can calculate the reactance required to deliver the desired current at the specified supply
+			voltage.
+			<br>
+			The voltage drops for the components other than the dropper capacitor are ignored at this time as they
+			are relatively small in comparison.
+		</p>
+		
+		<IMG 
+			style = "width: 350px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/Cap_reactance1.gif"
+			ALT = "Capacitive reactance formula"
+			>
+		<p>
+			Where;
+			<br>
+			Xc	= Capacitors reactance in ohms
+			<br>
+			Vin	= Supply voltage
+			<br>
+			Iin	= Input current
+		</p>
+		
+		<p>
+			<b>Desired reactance = 5837 Ohms</b>
+		</p>
+		
+		<!-- ********************* -->
+		
+		<h3>
+			<br>
+			3) Dropper Capacitor's Capacitance
+		</h3>
+		
+		<p>
+			Now we know what reactance we require, we can calculate the capacitor's capacitance
+		</p>
+		
+		<IMG 
+			style = "width: 450px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/Cap_capacitance1.gif"
+			ALT = "Capacitive reactance formula"
+			>
+		<p>
+			Where;
+			<br>
+			C	= Capacitance
+			<br>
+			f	= Supply frequency
+			<br>
+			PI 	=  3.1412
+			<br>
+			Xc	= Capacitors reactance in ohms
+		</p>
+		
+		<p>
+			The calculated capacitance = 545nF
+			<br>
+			<br>
+			The nearest preferred value of capacitance is 560nF 
+			(being larger will ensure we still meet our 20mA demand)
+			<br>
+			Next we should recalculate the input current using the preferred value capacitance.
+		</p>
+		
+		<!-- ********************* -->
+		
+		<h3>
+			<br>
+			4) New Reactance value
+		</h3>
+		
+		<p>
+			Calculate the reactance using the preferred value
+		</p>
+		
+		<IMG 
+			style = "width: 450px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/Cap_reactance2.gif"
+			ALT = "Capacitive reactance formula"
+			>
+		
+		<p>
+			<b>The new reactance value is 5684 Ohms</b>
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			5) New Input Current
+		</h3>
+		
+		<p>
+			The new input current is now calculated
+		</p>
+		
+		<IMG 
+			style = "width: 300px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/current_inputrms.gif"
+			ALT = "Input current rms formula"
+			>
+	
+		<p>
+			<b>The new input current is 42.2mA</b>
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			6) Current Limiting Resistor (R1)
+		</h3>
+		
+		<p>
+			Resistor R1 provides surge current limiting.
+			<br>
+			When C1 is fully discharged it is an effective zero ohm impedance. When power is first
+			applied particularly is the power is at its peak) the only impedance in the current 
+			path is that of the resistor and rectifier diodes
+			<br>
+			We can now calculate a value for R1
+		</p>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_value1.gif"
+			ALT = "Resistor R1 formula"
+			>
+		
+		<p>
+			Where;
+			<br>
+			peak	= Mains supply peak voltage
+			<br>
+			peak	= Rectifier diodes non-repetitive peak current
+			<br>
+		</p>
+		
+		<p>
+			Resistor R1 value = 11.333
+			<br>
+			<br>
+			Using the nearest preferred value then;
+			<br>
+			<br>
+			<b>Resistor R1 value = 12 Ohms</b>
+		</p>
+
+		<!-- ********************* -->
+		<h3>
+			<br>
+			7) Re-confirm the peak inrush current using the preferred value for R1
+		</h3>
+		
+		<IMG 
+			style = "width: 300px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_peakcurrent1.gif"
+			ALT = "R1 peak current formula"
+			>
+		
+		<p>
+			<b>Inrush peak current = 28.3 Amps</b>
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			8) Average power dissipated by resistor R1
+		</h3>
+		
+		<p>
+			Now we can calculate the power dissipation of R1
+		</p>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_averagepower1.gif"
+			ALT = "R1 average power formula"
+			>
+		
+		<p>
+			<b>R1 average power = 0.021 Watts = 21mW</b>
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			9) And the peak power dissipated by resistor R1
+		</h3>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_peakpower1.gif"
+			ALT = "R1 average power formula"
+			>
+		
+		<p>
+			<b>R1 peak power = 9600 Watts = 9.6kW</b>
+		</p>
+		
+		<p>
+			The duration of the peak power can be calculated as follows;
+		</p>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_peakpowerduration1.gif"
+			ALT = "R1 peak power duration formula"
+			>
+		
+		<p>
+			<b>R1 peak power duration = 6.72us</b>
+		</p>
+
+		<!-- ********************* -->
+		<h3>
+			<br>
+			10) Resistor R1 working voltage rating
+		</h3>
+		
+		<p>
+			The resistor working voltage should be greater than the peak mains voltage.
+		</p>
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/R1_workingvoltage1.gif"
+			ALT = "R1 working voltage formula"
+			>
+		
+		<p>
+			<b>R1 working voltage &gt;= 340V</b>
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			11) Smoothing Capacitor C2
+		</h3>
+		
+		<p>
+			Capacitor C2 smooths the half wave rectified mains voltage into a steady DC.
+			<br>
+			The size of capacitor is dependant upon the load current and the acceptable voltage ripple
+			on the DC rail
+			<br>
+			Assuming that only 8ms of the mains cycle is spent charging the smoothing capacitor
+			(the time when the mains voltage is greater than the capacitor {C2} voltage allowing the
+			rectifier diode {D2} to turn on), then the capacitor will have to supply enough energy to maintain
+			the DC rail for 12ms.
+			<br>
+			<br>
+			The average current drawn by the DC rail can be calculated as follows;
+		</p>
+
+		<IMG 
+			style = "width: 150px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/C1_outputcurrent1.gif"
+			ALT = "Average DC current formula"
+			>
+		
+		<p>
+			Where;
+			<br>
+			I = Average current in amps
+			<br>
+			C = Capacitance in farads
+			<br>
+			dv = DC ripple voltage
+			<br>
+			dt = Time when capacitor supplies the DC rail with current
+		</p>
+		
+		<p>
+			If we re-arrange this formula we can calculate the capacitance;
+		</p>
+
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/C1_capacitance1.gif"
+			ALT = "Smoothing Capacitance formula"
+			>		
+		
+		<p>
+			Smoothing Capacitor C2 = 0.00048 Farads = 480uF
+			<br>
+			<br>
+			Using the nearest preferred value then;
+			<br>
+			<br>
+			<b>Smoothing Capacitor C2 = 560uF</b>
+		</p>
+		
+		<p>
+			This is quite a large value capacitor and so is 0.5V of ripple.
+			To reduce the ripple by half will mean doubling the capacitor.
+			<br>
+			<br>
+			Alternatively we can do one of the following;
+			<br>
+			1.	Reduce the output current demand
+			<br>
+			2.	Relax the voltage ripple requirement
+			<br>
+			3.	Implement two stage smoothing / filtering
+			<br>
+			4.	Use full wave rectification
+		</p>
+
+		<!-- ********************* -->
+		<h3>
+			<br>
+			12) Reducing the output load current
+		</h3>
+		
+		<p>
+			We can reduce the size of the smoothing capacitor C2 by reducing the load current.
+			<br>
+			If we begin by choosing a preferred value for the smoothing capacitor, say 100uF we can the work back
+			to find the load current that will meet our voltage ripple requirement of 0.5V
+		</p>
+
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/C2_outputcurrent1.gif"
+			ALT = "Output Current formula"
+			>	
+		
+		<p>
+			So to use a 100uF capacitor for C2 and keep the ripple voltage to 0.5V our output load 
+			current should be reduced to 4.2mA. This is much less than our desired 20mA.
+			<br>
+			To find the best balance between load current, ripple voltage and smoothing current
+			some iteration and compromise to our requirements is required.
+		</p>
+
+				<!-- ********************* -->
+		<h3>
+			<br>
+			13) Relax our ripple voltage requirement
+		</h3>
+		
+		<p>
+			We can permit a large level of ripple voltage whilst keeping the same load current
+			in order to reduce our smoothing capacitor
+			<br>
+			So if we set our ripple voltage target to 1volt peak to peak and our load current is kept
+			at 20mA, we can calculate our new capacitor value
+		</p>
+
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/C1_capacitance2.gif"
+			ALT = "Smoothing Capacitor value"
+			>	
+		
+		<p>
+			Our smoothing capacitor valve is now 240uF.
+			<br>
+			<br>
+			This about half our original value but we have twice the ripple voltage.
+			<br>
+			Again to find the best solution some iteration and compromise of our requirements is needed.
+		</p>
+
+		<!-- ********************* -->
+		<h3>
+			<br>
+			14) Two stage smoothing
+		</h3>		
+		
+		<p>
+			This is covered in our Variant 2 design, see 
+			<a href="#variant_3">
+				Basic half wave rectifier and two stage smoothing
+			</A>
+			in the next section.
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			15) Full wave rectification
+		</h3>		
+		
+		<p>
+			This is covered in our Variant 3 design, see 
+			<a href="#variant_2">
+				Full wave rectifier and two stage smoothing
+			</A>
+			in the next section.
+		</p>
+		
+		<!-- ********************* -->
+		<h3>
+			<br>
+			16) Zener Diode
+		</h3>		
+		
+		<p>
+			<b>Zener Voltage</b>
+			<br>
+			The zener diode voltage should be selected to ensure the output supply voltage is clamped
+			to the maximum permissible voltage above the ideal voltage of our target.
+			<br>
+			<br>
+			Our target output voltage is 5V
+			<br>
+			<br>
+			The nearest preferred value of zener voltage above this is 5.1V, the next value is 5.6V.
+			<br>
+			Our initial selection will be 5.1V as this best matches our target.
+		</p>		
+		
+		<p>
+			<b>Continuous Power Rating</b>
+			<br>
+			<br>
+			The continuous power rating should be calculated under the condition where the load is pulling its
+			minimum current. So if the load is a resistive load permanently connected the minimum load will
+			be the same as the full load.
+			<br>
+			But where the load may vary or be switched off the minimum current could be as low as zero amps
+			<br>
+			<br>
+			Here we shall assume the load can be switched off, therefore the full power supply current will have to
+			be carried by the zener.
+		</p>
+		
+		<p>
+			<b>a) Find the maximum continuous current supplied by C1</b>
+		</p>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/Iout_max1.gif"
+			ALT = "Maximum continuos output current"
+			>
+		
+		<p>
+			<b>The Maximum output current = 21.1mA</b>
+		</p>
+		
+		<p>
+			<b>B) Calculate the continuous power dissipation</b>
+		</p>
+		
+		<IMG 
+			style = "width: 500px; height: 66px;"
+			BORDER = "0"
+			SRC = "Cap_dropper/Power_zener.gif"
+			ALT = "Zener continuous power"
+			>		
+		
+		<p>
+			<b>The Zener diode continuous power dissipation = 106mW</b>
+		</p>
+		
+		<p>
+			<b>C) Peak power dissipation</b>
+		</p>
+		
+		<p>
+			The peak power through the zener is dependant upon the following;
+			<br>
+			<ul>
+				<li> The voltage across the zener at the time of peak power</li>
+				<li> The current available from C1</li>
+				<li> The slope resistance of the zener diode</li>
+				<li> The impedance of both capacitors C1 and C2</li>
+			</ul>
+			<br>
+			Therefore it is easier to find the peak power using simulation rather than trying to calculate
+			the value. Which we shall do next.
+		</p>
+	
+		<!-- ********************* -->
+		<h2>
+			Calculations Summary
+		</h2>
+		
+		<p>
+			We have now calculated values for all our power supply components.
+		</p>
+		
+		<table>
+			<tr>
+				<td>
+					R1
+				</td>
+				<td>
+					= 12 Ohms, 21mW continuous power, 9.6kW peak power for 6.7us, 340V working
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					C1
+				</td>
+				<td>
+					= 560nF, 340V DC, non-polarized
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					D2 &amp; D3
+				</td>
+				<td>
+					= Standard rectifier diode,
+					42.2mA continuous current, 
+					30A non-repetitive peak current, 
+					340V peak inverse voltage
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					C2
+				</td>
+				<td>
+					= 560uf, 5.1V polarized
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					D1
+				</td>
+				<td>
+					= Zener diode, 5.1V, 21.1mA continuous, 106mW continuous
+				</td>
+			</tr>			
+		</table>
+		
+		<p>
+			Take note that these are the ideal values for our requirements, in practice the actual components
+			will not be exact matches. Also we should ensure the components parameters are better / higher rated
+			than the ones calculated to compensate for all tolerances in our design.
+			<br>
+			<br>
+			Component tolerance analysis will be discussed later on, for now we shall use the calculated values
+			to perform some simulations and evaluate the circuit under dynamic conditions.
+		</p>
+		
+		<!-- ********************* -->
+		<h2>
+			Simulations
+		</h2>
+		
+		<p>
+			Before we can simulate our design we should specify a couple more details as follows;
+		</p>
+		
+		<!--..Variant 2..***************************************************-->
+		<HR>
+		<BR>
+
+		<a name = "variant_2" >
+		
+			<H2 style="TEXT-ALIGN: LEFT;">
+				Variant 2 - Half wave rectifier and two stage smoothing
+			</H2>
+		</a>
+		
+		<!--..Variant 3..***************************************************-->
+		<HR>
+		<BR>
+
+		<a name = "variant_3" >
+		
+			<H2 style="TEXT-ALIGN: LEFT;">
+				Variant 3 - Full wave rectifier and two stage smoothing
+			</H2>
+		</a>
+
+		<!--Top Of Page Link...................................-->
+		<HR>
+		<BR>
+
+		<A HREF = "#Top_Of_Page">
+			Top of Page
+		</A>
+
+		<!--..END..**************************************************-->
+		<P>
+		{Updated: 23rd September 2008}
+	
+	</BODY>
+
+</HTML>

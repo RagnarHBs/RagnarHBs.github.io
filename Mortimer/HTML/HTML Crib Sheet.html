@@ -1,0 +1,344 @@
+<!--Document Declaration.........................................-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+	<!--..TITLE.........................................-->
+
+	<HEAD>
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+		<title>
+			HTML Crib sheet
+		</title>
+
+	</HEAD>
+
+	<!--..Body........................................-->
+   	<body
+		 style = "color: rgb(70, 70, 70); background-color: rgb(240, 240, 240);filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#CCCCCC', startColorstr='#FFFFFF', gradientType='0');"
+		 alink="#000099"	
+		 link="#000099"
+		 vlink="#990099"
+		>
+	
+		<!--..Home Links.......................................-->
+		
+		<A NAME = "Top_Of_Page"> <!--Top of Page Anchor-->
+		</A>
+
+		<!--Home Page Link-->
+		<A
+			HREF = "../../home.html"
+			onmouseover = "window.status = 'Back to home page'; return true"
+			onmouseout = "window.status = ''; return true"
+			>
+	
+			<IMG 
+				style = "width: 100px; height: 20px;"
+				BORDER = "0"
+				SRC = "../../Main_Images/home.gif"
+				ALT = "Home Page"
+				>
+		</A>
+
+		<!--Mortimer's Page Link-->
+		<div style="text-align: center;">
+			<A
+				HREF = "../Mortimer.html"
+				onmouseover = "window.status = 'Back to Mortimer's page'; return true"
+				onmouseout = "window.status = ''; return true"
+				>
+		
+				<IMG 
+					style = "width: 50px; height: 50px;"
+	
+					BORDER = "0"
+					SRC = "../../Main_Images/Mortimer 02.jpg"
+					ALT = "Mortimer's Page"
+					>
+			</A>
+		</div>
+		
+		<!--..Heading................................................-->
+
+		<div style="text-align: center;">
+
+			<H1>
+				HTML Crib sheet
+			</H1>
+		</div>
+
+		<!--..Introduction................................................-->
+		<HR>
+		<H2 ALIGN=CENTER>
+			Simple Index / Glossary of HTML Tags
+		</H2>
+
+		The page heading above is contructed as follows
+		<BR>
+		<BR>
+		&lt;H1 ALIGN=CENTER&gt; Simple Index / Glossary of HTML Tags&lt;/H1&gt;
+
+		<P>
+		This web page is being written step by step as I read and learn about each tag and HTML.
+		I am writing it to do the following;
+		
+		<UL>
+			<LI>Produce a simple index list of tag which I can refer to as I learn HTML
+			<LI> Allow me to try out the tag and their effects by using them to demostrate thier 
+				 function in this simple index
+			<LI> Provide a simple reference that anyone learning HTML can use
+		</UL>
+		
+		There may well be inaccuracies in my descriptions of the tag, or examples of bad practice.
+		These should hopefully be corrected over time as I learn more about HTML.
+		<P>
+		So please do not be anoyed or offended if you find any mistakes etc. 
+		But do drop me a line and educate me on what I may not understand.
+		<P>
+		Best Wishes to you all!
+
+		<!--.Contents................................................-->
+		<HR>
+		<BR>
+
+		<A NAME = "Contents">
+			<H2 ALIGN=LEFT>
+			Contents
+			</H2>
+		</A>
+
+		<OL>
+			<LI> &amp;
+			<LI> ! - Comment tag in the source code
+
+			<LI> A - Anchor & Hyperlinks
+			<LI> ADDRESS - Define content as an Adress
+			<LI> ALIGN - Format text alignment to Left, Center, Right
+			<LI> ASCII Characters - The ASCII character set
+
+			<LI> BLOCKQUOTE - Define content as a Quote from an external source
+			<LI> BODY - Defines the content as the 'body' of the document
+			<LI> BR - Line break, like a carriage return i.e. start a new line
+
+			<LI> CITE - Defines the content as a citation
+			<LI> CODE - Defineds the content as code e.g. computer program listing
+
+			<LI> <A HREF = "#Doc_Type"> DOCTYPE - Declares the html document type </A>
+			<LI> DL - 
+			<LI> DT - 
+			<LI> DD - 
+
+			<LI> <A HREF = "#EM"> EM - Add Emphasis to the following text </A>
+
+			<LI> <A HREF ="#Heading"> Hx - Formats the following text as a heading, x = 1 to 6 </A>
+			<LI> HEAD - Defines the content as the header of the html document
+			<LI> HTML - Defines the content as HTML
+			<LI> HR - Horizontal rule. Draws a line across the page
+
+			<LI> I - Formats the follwing text as itlaic
+			<LI> IMG - Embeds an image into the doucment
+
+			<LI> KBD - Defines the foolowing text as to be typed by the user
+			
+			<LI> LI - List item to occur in an unordered or ordere list
+
+			<LI> OL - Defines an ordered list
+
+			<LI> <A HREF = "#Paragraph"> P - Defines the follwing content as a paragraph </A>
+			<LI> PRE - Forces the web broswer to use the formatting in the source code
+
+			<LI> SAMP - 
+			<LI> SMALL - Set the font size to small
+			<LI> <A HREF = "#Style"> STYLE defines the formatting of the text and/or the document</A>
+
+			<LI> TABLE - Defines a table
+			<LI> TD - Table Data for a cell in a table
+			<LI> TH - Table header, defines a header for a table
+			<LI> TITLE - Deinfes the follwing text as the title of the html page
+			<LI> TR - Table row, starts a new row in a table
+
+			<LI> UL - Defines an Unordered list
+
+		</OL> 
+
+
+		<!--**..Declaration Description*****************************************************-->
+		<HR>
+		<BR>
+
+		<H2 ALIGN=LEFT>
+			<A NAME = "Doc_Type">
+			Document Type declaration
+			</A>
+		</H2>
+
+		All HTML documents should have a type declaration at the top. 
+		The decalaration content is not displayed in the web browsers.
+		The declaration format is as follows;
+		<BR>
+		<BR>
+		Example; <I>&lt;DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN"&gt;</I>
+		<BR>
+		<BR>
+		The meaning and purpose of each part of this declaration is as follows;
+		<BR>
+		TO BE COMPLETED
+
+		<P>
+		<A HREF = "#Contents"> Contents </A>
+
+
+
+		<!--**..Emphasis Description*****************************************************-->
+		<HR>
+		<BR>
+
+		<H2 ALIGN=LEFT>
+			<A NAME = "EM">
+			<EM>Emphasis tag</EM>
+			</A>
+		</H2>
+
+		<BR>
+		Example; <I>&lt;EM&gt;Emphasis tag&lt;/EM&gt;</I>
+		<BR>
+		<BR>
+
+		<EM>
+		The Emphasis tag is used to emphasis a important or more significant pice of text from the 
+		rest of the doucment / section / page
+		</EM>
+		<BR>
+		<BR>
+		The emphasis tag does not give control over how the emphasis is performed. 
+		This is determined by the browser and its settings
+		<P>
+		<A HREF = "#Contents"> Contents </A>
+		</P>
+
+		<!--**..Heading Description*****************************************************-->
+		<HR>
+		<BR>
+
+		<H2 ALIGN=LEFT>
+			<A NAME = "Heading">
+			Heading tag
+			</A>
+		</H2>
+
+		<BR>
+		Example; <I>&lt;H2&gt;Heading tag&lt;/H&gt;</I>
+		<BR>
+
+		<UL>
+			<LI> &lt;Hx&gt; starting tag, where x = 1 through to 6
+			<LI> "Heading tag" = The text for your heading
+			<LI> &lt;/Hx&gt; Ending tag, where x = 1 through to 6
+			<LI> <H1>1 = Top level heading, the largest </H1>
+			<LI> <H2>2 = 2nd level heading </H2>
+			<LI> <H3>3 = 3rd Level heading </H3>
+			<LI> <H4>4 = 4th level heading </H4>
+			<LI> <H5>5 = 5th level heading </H5>
+			<LI> <H6>6 = 6th level heading </H6>
+		</UL>
+
+		Note, levels 5 and 6 may not be shown on all web browsers consistantly or reliably. 
+		Use with some care or simply avoid using them.
+
+		<P>
+		<A HREF = "#Contents"> Contents </A>
+
+		<!--**..Paragraph Description*****************************************************-->
+		<HR>
+		<BR>
+
+		<H2 ALIGN=LEFT>
+			<A NAME = "Paragraph">
+			Paragraph tag
+			</A>
+		</H2>
+
+		<BR>
+		Example; <I>&lt;P {ATTRIBUTE}&gt;This is a paragrah&lt;/P&gt;</I>
+		<BR>
+		<BR>
+		&lt;P ALIGN=LEFT&gt;
+
+		<P ALIGN=LEFT>
+		The Paragraph tag is used to declare a section of text to be of the same paragraph. 
+		A line break will be inserted at the start of the paragraph. 
+		Further white spaces and white lines in the source will be ignored.
+		Optional attibutes can be used to set the paragraph formatting & style.
+
+		<BR>
+		<BR>
+		&lt;P ALIGN=CENTER&gt;
+		<P ALIGN=CENTER>
+		A line break is inserted. The Text aligment is now set to centre.
+		Further white spaces and white lines in the source will be ignored.
+
+		<BR>
+		<BR>
+		&lt;P ALIGN=RIGHT&gt;
+		<P ALIGN=RIGHT>
+		A line break is inserted. The Text aligment is now set to right.
+		Further white spaces and white lines in the source will be ignored.
+
+		This sentence is a line break away from the previous sentence in the source. 
+		This can aid readability of the source but appears to be part of the paragraph above in the browser view.
+		<BR>
+		<BR>
+		&lt;/P&gt;
+		</P>
+		The text now retruns to the normal alignment set outside the paragraph tag.
+
+		<P>
+		<A HREF = "#Contents"> Contents </A>
+
+		<!--**..Style Description*****************************************************-->
+		<HR>
+		<BR>
+
+		<H2 ALIGN=LEFT>
+			<A NAME = "Style">
+			Style tag
+			</A>
+		</H2>
+
+		This is a biggy! Text copied from other site - re-write
+		<P>
+		Defines a style in a document.
+
+		The style element goes in the head section. If you want to include a style sheet in your page, 
+		you should define the style sheet externally, and link to it using &lt;link>&gt;
+		
+		<P>
+		&lt;head&gt;<BR>
+		&lt;style type="text/css"&gt;<BR>
+		h1 {color: red}<BR>
+		h3 {color: blue}<BR>
+		&lt;/style&gt;<BR>
+		&lt;/head&gt;<BR>
+		<P>
+		See http://www.w3schools.com/css/css_reference.asp
+
+		<P>
+		<A HREF = "#Contents"> Contents </A>
+
+		<!--..Top Of Page Link..*************************************-->
+		<HR>
+		<BR>
+
+		<A HREF = "#Top_Of_Page">
+		Top of Page
+		</A>
+
+		<!--**..END..****************************************************-->
+		<P>
+		(Updated: 25th August 2008)
+
+	</BODY>
+</HTML>
